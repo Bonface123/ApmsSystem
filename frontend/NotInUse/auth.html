@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register - AI-Enhanced Patient Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the AI-Enhanced Patient Management System</h1>
+    </header>
+
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+        <button class="tab-button active" onclick="showForm('patient-login')">Patient Login</button>
+        <button class="tab-button" onclick="showForm('patient-register')">Patient Register</button>
+        <button class="tab-button" onclick="showForm('doctor-login')">Doctor Login</button>
+        <button class="tab-button" onclick="showForm('doctor-register')">Doctor Register</button>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <!-- Patient Login Form -->
+        <form id="patient-login" class="active" action="login.php" method="POST">
+            <h2>Patient Login</h2>
+            <label for="patientLoginUsername">Username:</label>
+            <input type="text" id="patientLoginUsername" name="username" required>
+
+            <label for="patientLoginPassword">Password:</label>
+            <input type="password" id="patientLoginPassword" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Patient Registration Form -->
+        <form id="patient-register" action="register.php" method="POST">
+            <h2>Patient Registration</h2>
+            <label for="patientUsername">Username:</label>
+            <input type="text" id="patientUsername" name="username" required>
+
+            <label for="patientPassword">Password:</label>
+            <input type="password" id="patientPassword" name="password" required>
+
+            <label for="patientAge">Age:</label>
+            <input type="number" id="patientAge" name="age" required>
+
+            <label for="patientMedicalHistory">Medical History:</label>
+            <textarea id="patientMedicalHistory" name="medical_history" placeholder="Describe any past or current medical conditions..."></textarea>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <!-- Doctor Login Form -->
+        <form id="doctor-login" action="doctor_login.php" method="POST">
+            <h2>Doctor Login</h2>
+            <label for="doctorLoginUsername">Username:</label>
+            <input type="text" id="doctorLoginUsername" name="username" required>
+
+            <label for="doctorLoginPassword">Password:</label>
+            <input type="password" id="doctorLoginPassword" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Doctor Registration Form -->
+        <form id="doctor-register" action="doctor_register.php" method="POST">
+            <h2>Doctor Registration</h2>
+            <label for="doctorUsername">Username:</label>
+            <input type="text" id="doctorUsername" name="username" required>
+
+            <label for="doctorPassword">Password:</label>
+            <input type="password" id="doctorPassword" name="password" required>
+
+            <label for="doctorFullName">Full Name:</label>
+            <input type="text" id="doctorFullName" name="full_name" required>
+
+            <label for="doctorSpecialty">Specialty:</label>
+            <input type="text" id="doctorSpecialty" name="specialty" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 AI-Enhanced Patient Management System</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle between forms
+        function showForm(formId) {
+            const forms = document.querySelectorAll('form');
+            const buttons = document.querySelectorAll('.tab-button');
+            
+            forms.forEach(form => form.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(formId).classList.add('active');
+            document.querySelector(`.tab-button[onclick="showForm('${formId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

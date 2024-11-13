@@ -1,0 +1,43 @@
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    border-radius: 8px;
+    border: none;
+
+}
+.card-header {
+    background-color: white;
+    border-bottom: none;
+    text-align: center;
+
+}
+.card-body {
+    padding: 40px;
+}
+.btn-custom {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+.btn-custom:hover {
+    background-color: #218838;
+}
+.btn-register {
+    background-color: #007bff;
+    color: white;
+    width: 100%;
+}
+.btn-register:hover {
+    background-color: #0056b3;
+}
+.custom-checkbox {
+    margin-left: -15px;
+}
+.forgot-password {
+    float: right;
+}
